@@ -160,13 +160,10 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.mVie
 
         float rated = (float) data.get(position).getVotes();
         DecimalFormat decim = new DecimalFormat("#.##");
-
         holder.rate.setText(decim.format(rated) + " (" + data.get(position).getNbr_votes() + ")");
         //holder.ratingBar.setRating(rated);
 
         holder.name.setText(data.get(position).getName());
-
-
         Drawable locationDrawable = new IconicsDrawable(context)
                 .icon(CommunityMaterial.Icon.cmd_map_marker)
                 .color(ResourcesCompat.getColor(context.getResources(), R.color.colorGrayDefault, null))
