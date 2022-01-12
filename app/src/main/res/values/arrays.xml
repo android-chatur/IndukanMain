@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts">
+        <item>@font/montserrat_black</item>
+        <item>@font/montserrat_bold</item>
+        <item>@font/montserrat_italic</item>
+        <item>@font/montserrat_medium</item>
+        <item>@font/montserrat_regular</item>
+        <item>@font/montserrat_thin</item>
+    </array>
+
+
+</resources>

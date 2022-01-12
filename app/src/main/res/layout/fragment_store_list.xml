@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/content_my_store"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+       <!-- <com.droideve.apps.dealify.views.FilterView
+            android:id="@+id/filter_layout"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="@dimen/tab_height"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal" />-->
+
+
+        <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+            android:id="@+id/shimmer_rv_stores"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:shimmer_demo_angle="20"
+            app:shimmer_demo_child_count="10"
+            app:shimmer_demo_layout="@layout/fragment_store_custom_item_loading"
+            app:shimmer_demo_layout_manager_type="linear_vertical" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scrollbars="none">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/clear_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="@dimen/spacing_middle"
+                    android:background="@drawable/gradient_color_btn"
+                    android:elevation="@dimen/spacing_small"
+                    android:padding="@dimen/spacing_middle"
+                    android:text="@string/clear_search"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/loading"
+        layout="@layout/loading_icon_manage" />
+
+    <include
+        android:id="@+id/error"
+        layout="@layout/include_layout_mange_error" />
+
+    <include
+        android:id="@+id/empty"
+        layout="@layout/include_layout_mange_empty" />
+
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item
+        android:id="@+id/navigation_product"
+        android:icon="@drawable/ic_outline_shopping_bag_24"
+        android:title="@string/products" />
+
+    <item
+        android:id="@+id/navigation_stores"
+        android:icon="@drawable/ic_storefront"
+        android:title="@string/tab_stores" />
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_outline_home"
+        android:title="@string/Home" />
+
+    <item
+        android:id="@+id/navigation_maps"
+        android:icon="@drawable/ic_outline_map"
+        android:title="@string/MapStores" />
+
+    <item
+        android:id="@+id/navigation_inbox"
+        android:icon="@drawable/ic_baseline_inbox"
+        android:title="@string/tab_inbox" />
+
+
+</menu>

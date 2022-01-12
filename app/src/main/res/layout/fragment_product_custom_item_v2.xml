@@ -1,0 +1,333 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/spacing_medium"
+    android:layout_marginTop="@dimen/spacing_small"
+    android:layout_marginEnd="@dimen/spacing_medium"
+    android:layout_marginBottom="@dimen/spacing_small"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="@drawable/custom_bg"
+    app:cardCornerRadius="@dimen/rounded_radius"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="false">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/defaultWhiteColor">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:minHeight="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/splash_backgound" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/featured"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:layout_marginBottom="@dimen/spacing_medium"
+                android:background="@drawable/rounded_layout_item"
+                android:backgroundTint="@color/colorFeatured"
+                android:gravity="center"
+                android:padding="@dimen/spacing_medium"
+                android:src="@drawable/ic_lnr_pushpin"
+                android:textColor="@color/defaultWhiteColor"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/offer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/spacing_small"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginEnd="@dimen/spacing_small"
+                android:layout_marginBottom="@dimen/spacing_small"
+                android:background="@drawable/rounded_badge_xlarge"
+                android:backgroundTint="@color/colorPromo"
+                android:gravity="center"
+                android:paddingStart="@dimen/spacing_medium"
+                android:paddingTop="@dimen/spacing_xsmall"
+                android:paddingEnd="@dimen/spacing_medium"
+                android:paddingBottom="@dimen/spacing_xsmall"
+                android:text="-30%"
+                android:textColor="@android:color/white"
+                android:textSize="17sp" />
+
+
+            <ImageView
+                android:id="@+id/deals"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:layout_marginBottom="@dimen/spacing_medium"
+                android:layout_toStartOf="@id/offer"
+                android:layout_toLeftOf="@id/offer"
+                android:background="@drawable/rounded_layout_item"
+                android:backgroundTint="@color/colorCountdownView"
+                android:gravity="center"
+                android:padding="@dimen/spacing_medium"
+                android:textColor="@color/defaultWhiteColor"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:srcCompat="@drawable/ic_alarms" />
+            <ImageView
+                android:id="@+id/favrate"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|center"
+                android:layout_margin="1dp"
+                android:backgroundTint="@color/white"
+                android:gravity="center"
+                android:background="@drawable/rounded"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/spacing_small"
+                app:srcCompat="@drawable/heart" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right|end"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginEnd="@dimen/spacing_small"
+        android:layout_marginBottom="@dimen/spacing_small"
+        android:background="@drawable/rounded_badge_xlarge"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:paddingStart="@dimen/spacing_xmedium"
+        android:paddingLeft="@dimen/spacing_xmedium"
+        android:paddingTop="@dimen/spacing_xsmall"
+        android:paddingEnd="@dimen/spacing_xmedium"
+        android:paddingRight="@dimen/spacing_xmedium"
+        android:paddingBottom="@dimen/spacing_xsmall"
+        android:text="30 Km"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <com.rey.material.widget.LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_gravity="center|start"
+            android:layout_margin="@dimen/spacing_xsmall"
+            android:background="@drawable/rounded_badge_xlarge"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/view"
+
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/spacing_xmedium"
+            android:paddingLeft="@dimen/spacing_small"
+            android:paddingTop="@dimen/spacing_xsmall"
+            android:paddingEnd="@dimen/spacing_xmedium"
+            android:paddingRight="@dimen/spacing_xmedium"
+            android:paddingBottom="@dimen/spacing_xsmall"
+            android:text="300"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+
+
+        <!--  <TextView
+              android:id="@+id/Faverate"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center|right"
+              android:layout_margin="@dimen/spacing_small"
+              android:background="@drawable/rounded_badge_xlarge"
+              android:backgroundTint="@color/white"
+              android:gravity="center"
+
+              android:paddingStart="@dimen/spacing_xmedium"
+              android:paddingLeft="@dimen/spacing_xmedium"
+              android:paddingTop="@dimen/spacing_xsmall"
+              android:paddingEnd="@dimen/spacing_xmedium"
+              android:paddingRight="@dimen/spacing_xmedium"
+              android:paddingBottom="@dimen/spacing_xsmall"
+              android:text="300"
+              android:drawablePadding="5dp"
+              android:drawableLeft="@drawable/view"
+              android:textColor="@android:color/black"
+              android:textSize="12sp" />-->
+
+        <!--
+        <ImageView
+            android:id="@+id/favrate"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            android:layout_toStartOf="@id/offer"
+            android:layout_toLeftOf="@id/offer"
+            android:background="@drawable/rounded_layout_item"
+            android:gravity="center"
+            android:padding="@dimen/spacing_medium"
+            android:textColor="@color/defaultWhiteColor"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:srcCompat="@drawable/ic_alarms" />-->
+
+
+    </com.rey.material.widget.LinearLayout>
+
+
+</RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.4"
+                        android:ellipsize="marquee"
+                        android:singleLine="true"
+                        android:text="Segunda hamburguesa Angus a mitadde precio lorem ipsum lorem ipsum"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/defaultBlackColor"
+                        android:textFontWeight="300"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="right|center"
+    android:layout_weight="0.6"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="right|center"
+
+        android:background="@drawable/gradient_color_btn"
+        android:backgroundTint="@color/colorPromo"
+        android:gravity="right"
+        android:paddingStart="2dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="2dp"
+        android:paddingBottom="@dimen/spacing_xsmall"
+        android:text="$50,00"
+        android:textAlignment="viewEnd"
+        android:textColor="@drawable/global_btn_text"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+</LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="marquee"
+                        android:gravity="bottom"
+                        android:singleLine="true"
+                        android:text="Segunda hamburguesa Angus a mitadde precio lorem ipsum lorem ipsum"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/old_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="@dimen/spacing_middle"
+                        android:layout_marginEnd="@dimen/spacing_small"
+                        android:gravity="bottom"
+                        android:paddingStart="@dimen/spacing_small"
+                        android:text="$70,00"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/grey_40"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+

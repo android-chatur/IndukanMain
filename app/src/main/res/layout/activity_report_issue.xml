@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/spacing_middle"
+        android:layout_weight="1"
+        android:background="@color/grey_5"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_middle">
+
+        <LinearLayout
+            android:id="@+id/item_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+
+            <RadioGroup
+                android:id="@+id/report_choices_rg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/choice_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choice 1"
+                    android:textStyle="bold"
+                    app:buttonTint="@color/colorPrimary" />
+
+                <RadioButton
+                    android:id="@+id/choice_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choice 2"
+                    android:textStyle="bold"
+                    app:buttonTint="@color/colorPrimary" />
+
+                <RadioButton
+                    android:id="@+id/choice_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choice 3"
+                    android:textStyle="bold"
+                    app:buttonTint="@color/colorPrimary" />
+
+                <RadioButton
+                    android:id="@+id/choice_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Other"
+                    android:textStyle="bold"
+                    app:buttonTint="@color/colorPrimary" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/custom_report_message_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/custom_report_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/white"
+                    android:gravity="top"
+                    android:hint="Write us your problem"
+                    android:inputType="text|textMultiLine"
+                    android:padding="@dimen/spacing_middle" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btns_action_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_update_status"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/spacing_middle"
+            android:layout_weight="1"
+            android:background="@drawable/gradient_color_btn"
+            android:gravity="center"
+            android:padding="@dimen/spacing_middle"
+            android:text="@string/report"
+            android:textColor="@drawable/global_btn_text"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</LinearLayout>

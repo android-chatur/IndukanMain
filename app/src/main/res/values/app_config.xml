@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Android Api Key  -->
+    <string name="ANDROID_API_KEY" translatable="false">6f4f4b904f39da5ca7f5aeb810fde3f7</string>
+
+    <!-- BASE API URL (PLEASE SET BASE_URL YOU FIND IT IN YOUR DASHBOARD -> APPLICATION -> [APP CLIENT AUTH]) -->
+    <string name="BASE_URL" translatable="false">http://indukaan.com/deal/index.php</string>
+    <string name="BASE_URL_API" translatable="false">http://indukaan.com/deal/index.php/api</string>
+
+    <string name="TERMS_OF_USE_URL" translatable="false">http://indukaan.com/demo/term_of_uses.html</string>
+    <string name="PRIVACY_POLICY_URL" translatable="false">http://indukaan.com/demo/privacy_policy.html</string>
+
+
+    <!--Set Your Application name-->
+    <string name="app_name">INDUKAAN</string>
+
+    <!--Set Your Application version -->
+    <string name="app_version">2.2.0</string>
+
+    <!-- ABOUT -->
+    <string name="ADDRESS_CONTACT" translatable="false">contact@indukaan.com</string>
+    <string name="PHONE">+01 0000 000000</string>
+    <string name="ABOUT_CONTENT">Indukaan is a powerful online Deals system with an intelligent search functionality that can help you find best deals
+        in a specific area so quickly and efficiently . </string>
+
+
+    <!-- APP DESIGN -->
+    <!-- Set your theme color  -->
+    <item name="colorPrimary" type="color">#ff7800</item>
+    <item name="colorPrimaryGradient" type="color">#fd2400</item>
+    <item name="colorAccent" type="color">#ff7900</item>
+    <item name="colorAccentTransparent" type="color">#30fd2300</item>
+    <item name="colorPrimaryDark" type="color">#FFFFFF</item>
+    <item name="colorPromo" type="color">#E53935</item>
+    <item name="colorFeatured" type="color">#1565C0</item>
+    <item name="colorUpcomingEvent" type="color">#0286f2</item>
+    <item name="colorCountdownView" type="color">#F4B400</item>
+    <item name="tab_colorDarkIcon" type="color">#fd2300</item>
+    <item name="tab_colorActiveIcon" type="color">#cccccc</item>
+    <item name="shimmer_loading_color" type="color">#d6d4d4</item>
+    <item name="shimmer_loading_color_darker" type="color">#b2b0b0</item>
+    <item name="colorStateUnChecked" type="color">#5b5b5a</item>
+    <item name="color_toolbar_action" type="color">#000000</item>
+
+
+
+    <!-- APP ADMOB SECTION -->
+    <string name="SHOW_ADS" translatable="false">false</string>
+    <string name="SHOW_ADS_IN_HOME" translatable="false">false</string>
+    <string name="SHOW_INTERSTITIAL_ADS_IN_STARTUP" translatable="false">false</string>
+    <string name="SHOW_ADS_IN_STORE" translatable="false">false</string>
+    <string name="SHOW_ADS_IN_OFFER" translatable="false">false</string>
+    <!--Your Admob APP UNIQUE ID-->
+    <string name="ad_app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <!--Your Admob INTERSTITIAL ID-->
+    <string name="ad_interstitial_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <!-- Your Admob banner unit ID-->
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+
+    <string name="places_api_key" translatable="false">AIzaSyA1IVHd8OKGwqSsxtrr55nCpHeJzwET_lQ</string>
+
+
+
+    <!--Set your google map key-->
+    <!--Set this field will allow you to open the google direction maps on your app without redirecting to google maps app-->
+    <string name="ENABLE_LOCAL_MAPS_DIRECTION" translatable="false">true</string>
+    <!--Set your google map  direction key-->
+    <string name="MAP_API_KEY">AIzaSyA1IVHd8OKGwqSsxtrr55nCpHeJzwET_lQ</string>
+    <!--Note : this field is optional if you set the ENABLE_LOCAL_MAPS_DIRECTION to false -->
+    <string name="map_direction_api_key" translatable="false">AIzaSyA1IVHd8OKGwqSsxtrr55nCpHeJzwET_lQ</string>
+
+
+
+    <!-- QUICK ACCESS ALLOWS YOU TO DISPLAY PRODUCTS , OFFERS , STORES LIST HORIZONTALLY ON HOME PAGE  -->
+    <string name="HOME_QUICK_ACCESS" translatable="false">false</string>
+
+    <!-- ENABLE CHAT SERVICE -->
+    <string name="ENABLE_CHAT" translatable="false">true</string>
+
+    <!-- DISPLAY MANAGE STORES VIA WEB -->
+    <string name="ENABLE_WEB_DASHBOARD" translatable="false">true</string>
+
+    <!-- ENABLE INTRO SLIDER WHEN THE APP START FOR THE FIRST TIME -->
+    <string name="ENABLE_INTRO_SLIDER" translatable="false">false</string>
+
+    <!-- DISPLAY RATE US ALERT DIALOG WHEN USE WANT EXIT FROM APP -->
+    <string name="RATE_US_ON_PLAY_STORE_FORCE" translatable="false">false</string>
+
+    <!-- MAXIMUM NUMBER OF STORES DISPLAYED IN THE GEO STORES MAP -->
+    <string name="NBR_STORES_MAX_GEO_MAPS">100</string>
+
+    <!--This field allow you to set a maximum radius to display a route between user location and the store near by-->
+    <string name="DISTANCE_MAX_DISPLAY_ROUTE">500000</string>
+
+    <!-- ENABLE PEOPLE AROUND ME -->
+    <string name="ENABLE_PEOPLE_AROUND_ME" translatable="false">true</string>
+
+    <!-- Change titles from strings file -->
+    <string-array name="tab_names">
+        <item>@string/tab_products</item>
+        <item>@string/tab_stores</item>
+        <item>@string/MapStoresMenu</item>
+        <item>@string/tab_inbox</item>
+    </string-array>
+
+    <!-- downloaded icons from http://materialdesignicons.com/ and put them inside drawable folder -->
+    <integer-array name="tab_icons">
+        <item>@drawable/ic_percent_outline_white_24dp</item>
+        <item>@drawable/ic_storefront_outline_white_24dp</item>
+        <item>@drawable/ic_outline_map</item>
+        <item>@drawable/ic_envelope</item>
+    </integer-array>
+
+    <!-- Tabs ID : PLEASE DON'T TOUCH THIS IF YOU DON'T KNOW HOW IT WORKS -->
+    <integer-array name="tab_indexes">
+        <item>-6</item><!-- Product Tab-->
+        <item>0</item><!-- Stores Tab-->
+        <item>-4</item><!-- Geo Tab-->
+        <item>-5</item><!-- Inbox Tab-->
+    </integer-array>
+
+
+    <!-- HOST NAME FOR DEEP LINKING -->
+    <string name="DP_HOST_NAME">indukaan.com</string>
+    <string name="DP_STORE_MESSAGE" translatable="false">@string/dp_view_store_on</string>
+    <string name="DP_PRODUCT_MESSAGE" translatable="false">@string/dp_view_product_on</string>
+
+    <string name="DP_PATH_PREFIX_STORE" translatable="false">/indukaan-v1-0/store</string>
+    <string name="DP_PATH_PREFIX_OFFER" translatable="false">/indukaan-v1-0/product</string>
+
+    <string name="DP_PATH_PREFIX_STORE_INDEX" translatable="false">/indukaan-v1-0/index.php/store</string>
+    <string name="DP_PATH_PREFIX_PRODUCT_INDEX" translatable="false">/indukaan-v1-0/index.php/product</string>
+
+
+</resources>

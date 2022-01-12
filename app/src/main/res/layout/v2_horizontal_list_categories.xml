@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cat_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_marginStart="@dimen/component_home_padding_size"
+        android:layout_marginEnd="@dimen/component_home_padding_size"
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/spacing_medium"
+        android:paddingEnd="@dimen/spacing_medium">
+
+        <TextView
+            android:id="@+id/card_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_weight="1"
+            android:text="@string/top_categories"
+            android:textColor="@color/black"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/card_show_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:textStyle="italic"
+            android:text="@string/show_more"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/title_size_medium"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+
+    <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:clipToPadding="false"
+        android:paddingLeft="@dimen/component_home_padding_size"
+        android:paddingStart="@dimen/component_home_padding_size"
+        android:paddingEnd="@dimen/component_home_padding_size"
+        android:paddingRight="@dimen/component_home_padding_size"
+
+        app:shimmer_demo_angle="20"
+        app:shimmer_demo_child_count="10"
+        app:shimmer_demo_layout="@layout/v2_placeholder_item_category_rect"
+        app:shimmer_demo_layout_manager_type="linear_horizontal" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:clipToPadding="false"
+
+        android:paddingLeft="@dimen/component_home_padding_size"
+        android:paddingStart="@dimen/component_home_padding_size"
+        android:paddingEnd="@dimen/component_home_padding_size"
+        android:paddingRight="@dimen/component_home_padding_size"
+        android:scrollbars="none" />
+
+</LinearLayout>

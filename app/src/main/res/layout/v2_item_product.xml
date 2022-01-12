@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/v2_product_card_width"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_medium"
+    app:cardBackgroundColor="@color/transparent"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/defaultWhiteColor">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.github.siyamed.shapeimageview.RoundedImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/small_notification_icon"
+                    app:siBorderColor="@color/transparent"
+                    app:siBorderWidth="0dp"
+                    app:siRadius="@dimen/badge_radius_xlarge" />
+
+
+                <ImageView
+                    android:id="@+id/featured"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="@dimen/spacing_medium"
+                    android:background="@drawable/rounded_layout_item"
+                    android:backgroundTint="@color/colorFeatured"
+                    android:gravity="center"
+                    android:padding="@dimen/spacing_small"
+                    android:src="@drawable/ic_lnr_pushpin"
+                    android:textColor="@color/defaultWhiteColor"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/deals"
+                    android:layout_width="35dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="end|top"
+                    android:layout_margin="@dimen/spacing_medium"
+                    android:background="@drawable/rounded_layout_item"
+                    android:backgroundTint="@color/colorCountdownView"
+                    android:padding="@dimen/spacing_medium"
+                    android:textColor="@color/defaultWhiteColor"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_bolt" />
+
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:layout_marginEnd="@dimen/spacing_medium"
+                    android:paddingStart="6dp"
+                    android:text="300 M"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|top"
+                    android:layout_margin="@dimen/spacing_medium"
+                    android:background="@drawable/rounded_badge_xlarge"
+                    android:backgroundTint="@color/colorPromo"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/spacing_medium"
+                    android:paddingTop="@dimen/spacing_xsmall"
+                    android:paddingEnd="@dimen/spacing_medium"
+                    android:paddingBottom="@dimen/spacing_xsmall"
+                    android:text="-30%"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+
+            </FrameLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_xsmall">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="Lorem ipsum dolor "
+                        android:textColor="@color/defaultBlackColor"
+                        android:textSize="@dimen/title_size_medium"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/spacing_small"
+                        android:gravity="center"
+                        android:text="$100.00"
+                        android:textColor="@color/colorPromo"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/old_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/spacing_small"
+                        android:gravity="center"
+                        android:text="$100.00"
+                        android:textColor="@color/grey_40"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="marquee"
+                        android:gravity="bottom"
+                        android:singleLine="true"
+                        android:text="Segunda hamburguesa Angus a mitadde precio lorem ipsum lorem ipsum"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

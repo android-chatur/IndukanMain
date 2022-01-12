@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/customSearch"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <!--Buttons search orderBy modules-->
+    <LinearLayout
+        android:padding="@dimen/spacing_large"
+        android:id="@+id/btnOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:id="@+id/orderByGeo"
+            style="@style/Button.Primary.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_rect_outline"
+            android:text="@string/order_by_geo"
+            android:textAllCaps="true"
+            android:textStyle="normal"
+            android:textSize="@dimen/title_size_small"
+            android:textColor="@drawable/btn_rect_outline_text" />
+
+        <Button
+            android:layout_marginStart="@dimen/spacing_small"
+            android:id="@+id/orderByDate"
+            style="@style/Button.Primary.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_rect_outline"
+            android:text="@string/order_by_recent"
+            android:textAllCaps="true"
+            android:textStyle="normal"
+            android:textSize="@dimen/title_size_small"
+            android:textColor="@drawable/btn_rect_outline_text" />
+
+    </LinearLayout>
+
+    <!--Layout Location Changer-->
+    <LinearLayout
+        android:id="@+id/layoutLocationChanger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/location"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/locationLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:text="@string/current_location"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <!--Buttons search filter modules-->
+    <LinearLayout
+        android:padding="@dimen/spacing_large"
+        android:id="@+id/btnsModules"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:id="@+id/filterProductsBtn"
+            style="@style/Button.Primary.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_rect_outline_white"
+            android:text="@string/tab_products"
+            android:textAllCaps="true"
+            android:textSize="@dimen/title_size_small"
+            android:textColor="@drawable/btn_rect_outline_text_white" />
+
+        <Button
+            android:id="@+id/filterOffersBtn"
+            style="@style/Button.Primary.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_small"
+            android:layout_weight="1"
+            android:background="@drawable/btn_rect_outline_white"
+            android:text="@string/tab_offers"
+            android:textAllCaps="false"
+            android:textColor="@drawable/btn_rect_outline_text_white"
+            android:textSize="@dimen/title_size_small"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_marginStart="@dimen/spacing_small"
+            android:id="@+id/filterStoresBtn"
+            style="@style/Button.Primary.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_rect_outline_white"
+            android:text="@string/tab_stores"
+            android:textAllCaps="true"
+            android:textSize="@dimen/title_size_small"
+            android:textColor="@drawable/btn_rect_outline_text_white" />
+
+
+    </LinearLayout>
+
+    <!-- Search by categories view -->
+    <LinearLayout
+        android:id="@+id/searchFilterCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:orientation="vertical">
+
+        <TextView
+            android:paddingLeft="@dimen/spacing_large"
+            android:paddingStart="@dimen/spacing_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="@string/select_category"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_medium" />
+
+        <HorizontalScrollView
+            android:id="@+id/categoryWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/spacing_medium"
+            android:paddingBottom="@dimen/spacing_medium"
+            android:paddingStart="@dimen/spacing_large"
+            android:paddingEnd="@dimen/spacing_large"
+            android:visibility="visible">
+
+        </HorizontalScrollView>
+
+        <!-- Category list horizontal scroll view   -->
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_medium" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/searchField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_large"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:backgroundTint="@color/grey_40"
+        android:hint="@string/write_name_address_city"
+        android:inputType="text"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColorHint="@color/grey_40" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_medium" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/spacing_large"
+        android:paddingBottom="@dimen/spacing_large">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:layout_marginBottom="@dimen/spacing_middle"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/spacing_large"
+                android:layout_marginEnd="@dimen/spacing_large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/radius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/radius"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/range_seek_bar_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_medium"
+                    android:text="@string/settings_notification_distance_dis"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <SeekBar
+                android:layout_marginStart="@dimen/spacing_xmedium"
+                android:layout_marginEnd="@dimen/spacing_xmedium"
+                android:id="@+id/range_seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:max="100"
+                android:progress="100"
+                android:splitTrack="true"
+                android:thumb="@drawable/seekbar_thumb_style" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

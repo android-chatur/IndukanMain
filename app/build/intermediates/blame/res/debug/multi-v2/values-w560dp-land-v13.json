@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\Indukan\\geogreenapps-android-f7009be5a98e\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w560dp-land-v13\\values-w560dp-land-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\f036bdc581a71bad659c81881534a0f7\\jetified-materialdatetimepicker-3.2.0\\res\\values-w560dp-land-v13\\values-w560dp-land-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,120,174",
+                        "endColumns": "64,53,50",
+                        "endOffsets": "115,169,220"
+                    }
+                }
+            ]
+        }
+    ]
+}

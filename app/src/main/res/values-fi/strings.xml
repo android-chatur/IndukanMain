@@ -1,0 +1,256 @@
+<resources>
+    <!-- update this 3 keys and compile your code from here  -->
+    <!-- Set your  application ID-->
+
+    <string name="Home">Etusivu</string>
+    <string name="ManageThings">Hallitse yritystäsi</string>
+    <string name="forgotpassword">&lt;u>Unohtuiko Salasana?&lt;/u></string>
+    <string name="drawer_open">Avaa</string>
+    <string name="drawer_close">Sulje</string>
+    <string name="confirm">Hyv‰ksy</string>
+    <string name="search">Etsi</string>
+    <string name="oups_no_item_found">Hups!! Ei Kohteita N‰ill‰ Hakuehdoilla</string>
+    <string name="about">Dealninja?</string>
+    <string name="Favoris">Suosikit</string>
+    <string name="FindCustomers">DELETE PEOPLE AROUND ME</string>
+    <string name="About_us">Dealninja?</string>
+    <string name="Settings">Asetukset</string>
+    <string name="MapStores">Karttahaku</string>
+    <string name="Login">Kirjaudu</string>
+    <string name="Logout">Kirjaudu Ulos</string>
+    <string name="parameter">Parametri</string>
+    <string name="title_activity_map_marker_position">Kartta</string>
+    <string name="close">Sulje</string>
+    <string name="categories">Kategoriat</string>
+
+
+    <string name="my_stores">"Suosikit</string>
+
+
+    <!--category--><![CDATA[
+    >
+    ]]>
+    <string name="Categories">Kategoriat</string>
+
+
+    <!--notification & messages-->
+    <string name="check_network" translatable="false">Tarkista internetyhteys</string>
+    <string name="network_error">Ei internetyhteytt‰! P‰ivit‰ sivu</string>
+    <string name="check_nework">Tarkista internetyhteys</string>
+    <string name="enable_network">Tarkista internetyhteyden toimivuus</string>
+
+    <string name="editProfile">Muokkaa profiilia</string>
+
+    <!--store-->
+    <string name="store_to_far_map">Et‰isyys liian kaukana n‰ky‰kseen kartalla</string>
+    <string name="store_call_error">Virhe puhelinyhteydess‰</string>
+    <string name="store_title_detail">Kohteen Tiedot</string>
+
+
+    <!--messages settings-->
+
+    <string name="settings_notifications">ILMOITUKSET</string>
+    <string name="settings_app_infos">DEALNINJA</string>
+
+
+    <!-- OFFERS -->
+    <string name="settings_notification_products">Vastaanota ilmoituksia uusista Diileist‰</string>
+    <string name="settings_notification_products_title">Tarjousilmoitukset</string>
+
+
+    <!-- EVENTS -->
+
+    <!-- STORES -->
+    <string name="settings_notification_stores">Vastaanota ilmoituksia uusista kohteista</string>
+    <string name="settings_notification_stores_title">Kohdeilmoitukset</string>
+
+
+
+    <!-- MESSENGER -->
+    <string name="settings_notification_messenger">Vastaanota ilmoituksia uusista viesteist‰</string>
+    <string name="settings_notification_messenger_title">Viesti-ilmoitukset</string>
+
+    <!-- DISTANCE -->
+    <string name="settings_notification_distance_dis">%1$s %2$s</string>
+
+    <!-- APP_INFOS -->
+    <string name="settings_app_infos_title">Dealninja App versio</string>
+
+    <!--login & sign up-->
+    <string name="insert_name_field">Nimi</string>
+
+    <string name="lessThan1km">Alle 1 Km</string>
+    <string name="MoreThan2km">+2 Km</string>
+    <string name="MoreThan5km">+5 Km</string>
+    <string name="MoreThan10km">+10 Km</string>
+
+    <string name="description">Dealninja</string>
+
+
+    <string name="permission_disabled_notice">Dealninja App on suunniteltu toimimaan puhelimen GPS sijainnin perusteella n‰ytt‰‰kseen sinulle parhaimmat sinua l‰hell‰si olevat kohteet, jos et kuitenkaan halua aktivoida puhelimesi sijaintitietoja k‰ytt‰‰ksesi Dealninja palvelua, niin valitettavasti Dealninja App ei toimi ilman virheilmoituksia.</string>
+    <string name="signup_number">Puhelinnumero</string>
+    <string name="signup_select_your_country">Valitse Maa</string>
+    <string name="login_username">Email tai k‰ytt‰j‰tunnus</string>
+    <string name="password_atleast_6_8_characters_long">Salasana</string>
+    <string name="save">Tallenna</string>
+    <string name="find_new_neighbours">DELETE THIS STRING COMPLETELY</string>
+
+
+    <string name="youHaveDiscussions">Sinulla on %1$d uusi keskustelu %2$d viesti‰</string>
+    <string name="youHaveMessage">Sinulle on tullut uusi viesti</string>
+    <string name="productIn"> %1$s</string>
+    <string name="products">Diilit</string>
+    <string name="reviews">Arvostelut (%1$s)</string>
+    <string name="noProduct">Ei tarjouksia</string>
+    <string name="detailProduct">Katso Diili</string>
+    <string name="noReviews">Ei Arvosteluja</string>
+    <string name="addReview">Lis‰‰ Arvostelu</string>
+    <string name="settings">Asetukset</string>
+    <string name="pseudo">K‰ytt‰j‰tunnus</string>
+    <string name="error">Hups! Tapahtui virhe, kokeile uudelleen!</string>
+
+    <string name="selectRating">Arvostele Kohde, Diili, Tuote tai Palvelu</string>
+    <string name="pleaseWriteReview">Lis‰‰ Arvostelu</string>
+    <string name="writeReview">Kirjoita Arvostelu</string>
+    <string name="thankYou">Kiitokset Palautteestasi!</string>
+
+    <string name="searchOn" translatable="false">Hae sijaintia, esim. Helsinki</string>
+
+
+    <string name="pconfirm">Vahvista salasana</string>
+    <string name="email">S‰hkˆposti</string>
+
+
+    <string name="people_around_me">DELETE THIS STRING COMPLETELY</string>
+
+    <string name="promo">DIILI</string>
+
+
+
+    <string name="fileUploading">Ladataan Tiedostoa!</string>
+    <string name="fill_all_fields">T‰yt‰th‰n kaikki Kent‰t</string>
+
+    <string name="rateUs">Jos pid‰t Dealninja Diilipalvelua hyˆdyllisen‰, niin annathan meille arvostelun. Suuret kiitokset!</string>
+
+    <string name="you_ve_already_reviewd">Olet jo Lis‰nnyt Arvostelun!</string>
+
+
+    <string name="shared_text">%1$s - vain %2$s \n %3$s</string>
+    <string name="reload">P‰ivit‰</string>
+    <string name="mail">Viestit</string>
+    <string name="today">T‰n‰‰n</string>
+    <string name="Send_message">L‰het‰ viesti</string>
+    <string name="create_an_account">Luo K‰ytt‰j‰tili</string>
+    <string name="Sign_in">Kirjaudu Sis‰‰n</string>
+    <string name="password_hint">Salasana</string>
+    <string name="version">Versio</string>
+    <string name="phone">Puhelin</string>
+    <string name="app_privacy">Yksityisyys</string>
+    <string name="app_term_of_uses">K‰yttˆehdot</string>
+
+
+    <string name="product_start_at">Alkaa %1$s</string>
+    <string name="product_end_at">Loppuu %1$s</string>
+    <string name="product_ended_at">Loppui %1$s</string>
+
+
+    <string name="tab_stores">Kohteet</string>
+    <string name="tab_products">Diilit</string>
+    <string name="tab_inbox">Viestit</string>
+    <string name="your_destination">M‰‰r‰np‰‰</string>
+    <string name="refresh">P‰ivit‰</string>
+    <string name="no_users">Ei K‰ytt‰ji‰</string>
+    <string name="sign_up">Rekisterˆidy</string>
+
+    <string name="chat_notification_title">Sinulle on uusi viesti</string>
+    <string name="authentification_error_msg">K‰ytt‰j‰nimi ja salasana ei t‰sm‰‰.</string>
+    <string name="gallery">Galleria</string>
+    <string name="noImages">Ei kuvia</string>
+    <string name="enable_network_map_direction">Tarkista internetyhteys</string>
+    <string name="enable_gps_map_direction">Aktivoi puhelimesi GPS sijainti</string>
+
+    <string name="skip">Ohita</string>
+    <string name="start">Aloita</string>
+    <string name="intro_slide_1_title">Etsi Ravintoloita</string>
+    <string name="intro_slide_1_description">Etsi ravintoloiden huipputarjouksia sijaintisi perusteella, valitse tarjous ja navigoi kohteeseen</string>
+     <string name="intro_slide_3_title" >Etsi kohteita</string>
+    <string name="intro_slide_3_description"> Lˆyd‰ L‰hiyritysten ylivoimaisesti parhaat Tarjoukset, Diilit sek‰ Alennuskupongit sijaintisi perusteella </string>
+    <string name="intro_slide_4_title">Arvostele Kohde</string>
+    <string name="intro_slide_4_description"> Tarkista kohteiden Arvostelut sek‰ Arvostele Yrityksi‰</string>
+    <string name="alert_gps_dialog">K‰ytt‰‰ksesi DEALNINJA App palvelua, sinun t‰ytyy ensin aktivoida sek‰ antaa j‰rjestelm‰n k‰ytt‰‰ puhelimesi Gps sijaintitietoja.</string>
+    <string name="confirm_gps_relaunch">Kokeile Uudelleen</string>
+    <string name="next">Seuraava</string>
+    <string name="block">Est‰</string>
+    <string name="unblock">Poista Esto</string>
+    <string name="less_than_1_km">Alle 1 km</string>
+    <string name="noDiscussions">Ei keskusteluja</string>
+    <string name="network_not_available">Yhteysvirhe</string>
+    <string name="retry">Yrit‰ uudelleen</string>
+    <string name="MapStoresMenu">Karttahaku</string>
+    <string name="review_title">Arvostelut</string>
+    <string name="load_more">N‰yt‰ lis‰‰</string>
+    <string name="logout_alert">Et ole kirjautunut sis‰‰n, t‰m‰ voi johtua siit‰ ett‰ tilisi on suljettu v‰‰rink‰ytˆn vuoksi tai poistettu j‰rjestelm‰st‰. Jos haluat aktivoida tilisi uudelleen, olethan yhteydess‰ asiakasalveluumme info@dealninja.fi</string>
+    <string name="store_not_found">Kohde ei saatavilla!</string>
+    <string name="notification">Ilmoitukset</string>
+    <string name="msg_dialog_privacy_policy"> K‰ytt‰m‰ll‰ DEALNINJA sovellusta, Hyv‰ksyt %1$s sek‰ %2$s ehdot.</string>
+    <string name="privacy_and_policy"><![CDATA[K‰yttˆehdot]]></string>
+    <string name="decline">En Hyv‰ksy</string>
+    <string name="accept">Hyv‰ksyn</string>
+    <string name="product_off">%1$s Alennus</string>
+    <string name="no_message_inbox">Ei uusia viestej‰! Aloita keskustelu!</string>
+    <string name="no_message_yet">Ei Uusia Viestej‰</string>
+    <string name="select_category">Valitse Kategoria:</string>
+    <string name="current_location">GPS Sijainti</string>
+    <string name="location">Sijainti:</string>
+    <string name="required_field">* Pakollinen Kentt‰</string>
+    <string name="order_details">TILAUSTIEDOT</string>
+    <string name="statusID">Tilaus #%1$d</string>
+    <string name="orders">Tilaukset</string>
+    <string name="product_qty">M‰‰r‰: %1$d</string>
+    <string name="your_order_has_been_sent_successfully">Tilaus l‰hetetty onnistuneesti!</string>
+    <string name="order_qty">M‰‰r‰: %1$d</string>
+    <string name="order_detail">Tiedot</string>
+    <string name="username">K‰ytt‰j‰nimi</string>
+    <string name="confirm_order">Vahvista Tilaus</string>
+    <string name="do_you_want_to_change_your_location">Haluatko vaihtaa sijaintiasi ?</string>
+    <string name="change_location">Vaihda Sijainti</string>
+    <string name="recent_products">Uusimmat Diilit</string>
+    <string name="show_more">N‰yt‰ Lis‰‰</string>
+    <string name="searchOnMaps">Karttahaku</string>
+    <string name="complet_required_fileds">T‰yt‰th‰n kaikki vaaditut kent‰t!</string>
+    <string name="pay_now">Siirry Maksamaan</string>
+    <string name="confirm_payment">Hyv‰ksy Maksu</string>
+    <string name="payment_error">Maksuvirhe</string>
+    <string name="error_try_later">Virhe, yrit‰ uudelleen!</string>
+
+    <string name="rate_dialog_title">Arvostele Deal Ninja</string>
+    <string name="rate_dialog_ok">Arvostele</string>
+    <string name="rate_dialog_cancel">Muistuta Myˆhemmin</string>
+    <string name="login_create_account">Kirjaudu / Rekisterˆidy</string>
+    <string name="checkout">Tilaustiedot</string>
+
+    <string name="dp_view_store_on">Katso Kohde</string>
+    <string name="dp_view_product_on">Katso Diili</string>
+    <string name="clear_search">Tyhjenn‰</string>
+    <string name="subtotal">V‰lisumma</string>
+    <string name="quantity">M‰‰r‰</string>
+    <string name="date_filtre">Uusimmat</string>
+    <string name="geo_Filter">Sijainti</string>
+    <string name="ends_in">"Loppuu: "</string>
+    <string name="day">"vrk"</string>
+    <string name="percent">Prosenttia</string>
+    <string name="price">Hinta: </string>
+    <string name="order_detail_checkout">TILAUSTIEDOT:</string>
+    <string name="order_total">YHTEENSƒ</string>
+    <string name="product_order">TUOTETILAUS:</string>
+    <string name="detail">Tiedot</string>
+    <string name="done">VALMIS</string>
+
+    <string name="keep_current_location">Pid‰ Oma Sijainti</string>
+    <string name="text_attached_no_msg">Kirjaudu Chattiin kysy‰ksesi lis‰‰</string>
+    <string name="try_a_refresh_the_page">P‰ivit‰ sivu uudelleen</string>
+    <string name="no_feed_yet">Et ole saanut viel‰ yht‰‰n viesti‰</string>
+
+
+
+</resources>
