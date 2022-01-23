@@ -46,10 +46,10 @@
                 android:layout_weight="1"
                 android:background="#FFFFFF"
                 android:hint="@string/Send_message"
-                android:textAlignment="viewStart"
                 android:inputType="text|textMultiLine|textCapSentences"
                 android:maxLines="6"
                 android:padding="12dp"
+                android:textAlignment="viewStart"
                 android:textSize="@dimen/size_msg_textbox" />
 
             <ImageButton

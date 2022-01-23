@@ -62,6 +62,7 @@ public class ProductDetailActivity_ViewBinding implements Unbinder {
     target.layout_custom_order = Utils.findRequiredViewAsType(source, R.id.layout_custom_order, "field 'layout_custom_order'", LinearLayout.class);
     target.product_type = Utils.findRequiredViewAsType(source, R.id.product_type, "field 'product_type'", TextView.class);
     target.product_value = Utils.findRequiredViewAsType(source, R.id.product_value, "field 'product_value'", TextView.class);
+    target.followors = Utils.findRequiredViewAsType(source, R.id.followors, "field 'followors'", TextView.class);
     view = Utils.findRequiredView(source, R.id.btn_custom_order, "field 'btnCustomOrder' and method 'onOrderClick'");
     target.btnCustomOrder = Utils.castView(view, R.id.btn_custom_order, "field 'btnCustomOrder'", AppCompatButton.class);
     view7f0a0160 = view;
@@ -107,6 +108,7 @@ public class ProductDetailActivity_ViewBinding implements Unbinder {
     target.layout_custom_order = null;
     target.product_type = null;
     target.product_value = null;
+    target.followors = null;
     target.btnCustomOrder = null;
 
     view7f0a0160.setOnClickListener(null);

@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Indukan\\geogreenapps-android-f7009be5a98e\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
+            "outputFile": "F:\\Chatur\\Indukan\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "E:\\Indukan\\geogreenapps-android-f7009be5a98e\\app\\src\\main\\res\\values-xlarge\\dimens.xml",
+                    "source": "F:\\Chatur\\Indukan\\app\\src\\main\\res\\values-xlarge\\dimens.xml",
                     "from": {
                         "startLines": "4,5",
                         "startColumns": "4,4",
-                        "startOffsets": "57,113",
+                        "startOffsets": "61,118",
                         "endColumns": "55,58",
-                        "endOffsets": "108,167"
+                        "endOffsets": "112,172"
                     },
                     "to": {
                         "startLines": "8,9",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\bffff40eabfbdb22bfff3204496b5818\\appcompat-1.1.0\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "source": "C:\\Users\\ADMIN\\.gradle\\caches\\transforms-2\\files-2.1\\bffff40eabfbdb22bfff3204496b5818\\appcompat-1.1.0\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",

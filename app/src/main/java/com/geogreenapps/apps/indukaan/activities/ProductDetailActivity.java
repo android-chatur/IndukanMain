@@ -1,5 +1,10 @@
 package com.geogreenapps.apps.indukaan.activities;
 
+import static com.geogreenapps.apps.indukaan.appconfig.AppConfig.APP_DEBUG;
+import static com.geogreenapps.apps.indukaan.appconfig.AppConfig.SHOW_ADS;
+import static com.geogreenapps.apps.indukaan.appconfig.AppConfig.SHOW_ADS_IN_OFFER;
+import static com.geogreenapps.apps.indukaan.controllers.sessions.SessionsController.isLogged;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
@@ -29,6 +34,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -44,21 +50,20 @@ import com.android.volley.VolleyError;
 import com.bumptech.glide.Glide;
 import com.geogreenapps.apps.indukaan.AppController;
 import com.geogreenapps.apps.indukaan.GPS.GPStracker;
-import com.geogreenapps.apps.indukaan.GPS.Position;
 import com.geogreenapps.apps.indukaan.R;
 import com.geogreenapps.apps.indukaan.animation.ImageLoaderAnimation;
 import com.geogreenapps.apps.indukaan.appconfig.AppConfig;
 import com.geogreenapps.apps.indukaan.appconfig.Constances;
 import com.geogreenapps.apps.indukaan.classes.Cart;
-import com.geogreenapps.apps.indukaan.classes.Category;
-import com.geogreenapps.apps.indukaan.classes.Discussion;
+import com.geogreenapps.apps.indukaan.classes.Guest;
 import com.geogreenapps.apps.indukaan.classes.Images;
 import com.geogreenapps.apps.indukaan.classes.Product;
 import com.geogreenapps.apps.indukaan.classes.Store;
+import com.geogreenapps.apps.indukaan.classes.User;
 import com.geogreenapps.apps.indukaan.controllers.CampagneController;
 import com.geogreenapps.apps.indukaan.controllers.SettingsController;
 import com.geogreenapps.apps.indukaan.controllers.cart.CartController;
-import com.geogreenapps.apps.indukaan.controllers.categories.CategoryController;
+import com.geogreenapps.apps.indukaan.controllers.sessions.GuestController;
 import com.geogreenapps.apps.indukaan.controllers.sessions.SessionsController;
 import com.geogreenapps.apps.indukaan.controllers.stores.ProductsController;
 import com.geogreenapps.apps.indukaan.controllers.stores.StoreController;
@@ -71,6 +76,7 @@ import com.geogreenapps.apps.indukaan.network.VolleySingleton;
 import com.geogreenapps.apps.indukaan.network.api_request.SimpleRequest;
 import com.geogreenapps.apps.indukaan.parser.api_parser.ProductParser;
 import com.geogreenapps.apps.indukaan.parser.api_parser.StoreParser;
+import com.geogreenapps.apps.indukaan.parser.tags.Tags;
 import com.geogreenapps.apps.indukaan.utils.DateUtils;
 import com.geogreenapps.apps.indukaan.utils.ProductUtils;
 import com.geogreenapps.apps.indukaan.utils.TextUtils;
@@ -109,27 +115,16 @@ import cn.iwgang.countdownview.CountdownView;
 import io.realm.Realm;
 import io.realm.RealmList;
 
-import static com.geogreenapps.apps.indukaan.appconfig.AppConfig.APP_DEBUG;
-import static com.geogreenapps.apps.indukaan.appconfig.AppConfig.SHOW_ADS;
-import static com.geogreenapps.apps.indukaan.appconfig.AppConfig.SHOW_ADS_IN_OFFER;
-import static com.geogreenapps.apps.indukaan.controllers.sessions.SessionsController.isLogged;
-
 
 public class ProductDetailActivity extends GlobalActivity implements ViewManager.CustomView, OnMapReadyCallback {
-    private GoogleMap mMap;
-
     @BindView(R.id.app_bar)
     Toolbar toolbar;
-    private RequestQueue queue;
     @BindView(R.id.progressBar)
     SpinKitView progressBar;
     @BindView(R.id.loading)
     LinearLayout loading;
     @BindView(R.id.toolbar_back)
     ImageView toolbar_back;
-    private GPStracker mGPS;
-    private Context context;
-    private OfferCustomView horizontalOfferList;
     @BindView(R.id.phoneBtn)
     ImageButton phoneBtn;
     @BindView(R.id.toolbar_title)
@@ -146,7 +141,7 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
     TextView priceView;
     @BindView(R.id.old_price)
     TextView old_price;
-
+    AppCompatEditText et_comment;
     @BindView(R.id.detail_product)
     TextView detailProduct;
     @BindView(R.id.product_up_to)
@@ -163,10 +158,10 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
     AdView adView;
     @BindView(R.id.ads)
     LinearLayout ads;
-
+    String Comment;
+    ImageButton save_comment;
     @BindView(R.id.deal_layout)
     LinearLayout dealLayout;
-
     @BindView(R.id.mScroll)
     ParallaxScrollView mScroll;
     @BindView(R.id.mapBtn)
@@ -175,19 +170,31 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
     LinearLayout progressMapLL;
     @BindView(R.id.layout_custom_order)
     LinearLayout layout_custom_order;
-    private Store storedata;
-
     @BindView(R.id.product_type)
     TextView product_type;
     @BindView(R.id.product_value)
     TextView product_value;
-
+    @BindView(R.id.followors)
+    TextView followors;
     @BindView(R.id.btn_custom_order)
     AppCompatButton btnCustomOrder;
-
-
-
+    private GoogleMap mMap;
+    private RequestQueue queue;
+    private GPStracker mGPS;
+    private Context context;
+    private OfferCustomView horizontalOfferList;
+    private Store storedata;
     private Store relatedStore;
+    private int product_id = 0;
+    private ViewManager mViewManager;
+    private Product productData;
+    private Menu menuContext;
+    private LatLng customerPosition;
+    // custom quantity fields
+    private int custom_qte = 1;
+    private float custom_price = -1;
+    private float original_price = -1;
+    private HashMap<String, Object> cartlist;
 
     @OnClick(R.id.btn_custom_order)
     void onOrderClick(View view) {
@@ -276,21 +283,6 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
 
     }
 
-
-    private int product_id = 0;
-    private ViewManager mViewManager;
-    private Product productData;
-    private Menu menuContext;
-    private LatLng customerPosition;
-
-    // custom quantity fields
-    private int custom_qte = 1;
-    private float custom_price = -1;
-    private float original_price = -1;
-
-    private HashMap<String, Object> cartlist;
-
-
     @Override
     protected void onResume() {
 
@@ -354,6 +346,7 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
     }
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -361,10 +354,11 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
 
         setContentView(R.layout.activity_product_detail);
         ButterKnife.bind(this);
+        save_comment = findViewById(R.id.save_comment);
+        et_comment = findViewById(R.id.et_comment);
 
         setupToolbar();
         toolbarTransactionScroll();
-
         cartlist = new HashMap<>();
 
         //ADD ADMOB BANNER
@@ -479,7 +473,7 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
             public void onClick(View view) {
                 try {
 
-                   // String smsNumber = edittextSmsNumber.getText().toString();
+                    // String smsNumber = edittextSmsNumber.getText().toString();
                     String smsNumber = storedata.getPhone();
                     String smsText = "hello";
 
@@ -540,6 +534,340 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
         initGLobalParams();
 
         buttonClickListener();
+        final Guest guest = GuestController.getGuest();
+        int gid = 0;
+        if (guest != null)
+            gid = guest.getId();
+
+        final int finalGid = gid;
+
+
+        followors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (isLogged()) {
+
+                    try {
+                        User currentUser = SessionsController.getSession().getUser();
+
+                        if (storedata.getSaved() > 0) {
+                            removeStoreToBookmarks(ProductDetailActivity.this, currentUser.getId(), storedata.getId());
+                        } else {
+                            saveStoreToBookmarks(ProductDetailActivity.this, currentUser.getId(), storedata.getId());
+                        }
+                    } catch (Exception e) {
+                        //send a rapport to support
+                        if (APP_DEBUG) e.printStackTrace();
+                    }
+
+                } else {
+                    startActivity(new Intent(ProductDetailActivity.this, LoginActivity.class));
+                }
+            }
+        });
+
+        save_comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isLogged()) {
+
+
+                    if (validate()) {
+                        //send review
+
+                        sendReview(
+
+
+                                Comment,
+                                finalGid
+
+                        );
+
+                    } else {
+                        Toast.makeText(ProductDetailActivity.this, "Please enter Comments", Toast.LENGTH_SHORT).show();
+
+                    }
+
+
+                } else {
+                    Intent intent = new Intent(context, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
+
+    }
+
+    public void removeStoreToBookmarks(final Context context, final int user_id, final int int_id) {
+
+        RequestQueue queue = VolleySingleton.getInstance(context).getRequestQueue();
+        SimpleRequest request = new SimpleRequest(Request.Method.POST,
+                Constances.API.API_REMOVE_STORE_BOOKMARK, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                if (APP_DEBUG) {
+                    Log.e("response", response);
+                }
+
+                try {
+
+                    JSONObject jsonObject = new JSONObject(response);
+
+                    if (jsonObject.getInt(Tags.SUCCESS) == 1) {
+                        storedata = StoreController.doSave(storedata.getId(), 0);
+//                        if (storedata != null) {
+//                            setBookmarkMenu();
+//                        }
+                        followors.setText("Follow");
+
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Something went wrong , please try later ", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    //send a rapport to support
+                    e.printStackTrace();
+                }
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                if (APP_DEBUG) {
+                    Log.e("ERROR", error.toString());
+                }
+
+
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+
+                params.put("user_id", String.valueOf(user_id));
+                params.put("store_id", String.valueOf(int_id));
+
+                return params;
+            }
+
+        };
+
+        request.setRetryPolicy(new DefaultRetryPolicy(SimpleRequest.TIME_OUT,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        queue.add(request);
+
+    }
+
+    private void setBookmarkMenu() {
+        MenuItem bookmarksItemMenu = menuContext.findItem(R.id.bookmarks_icon);
+        if (bookmarksItemMenu != null) {
+            if ((isLogged() && storedata.getSaved() > 0)) {
+                Drawable cmd_bookmark = new IconicsDrawable(this)
+                        .icon(CommunityMaterial.Icon.cmd_bookmark)
+                        .color(ResourcesCompat.getColor(getResources(), R.color.white, null))
+                        .sizeDp(18);
+                bookmarksItemMenu.setIcon(cmd_bookmark);
+            } else {
+                Drawable cmd_bookmark = new IconicsDrawable(this)
+                        .icon(CommunityMaterial.Icon.cmd_bookmark_outline)
+                        .color(ResourcesCompat.getColor(getResources(), R.color.white, null))
+                        .sizeDp(18);
+                bookmarksItemMenu.setIcon(cmd_bookmark);
+            }
+        }
+
+    }
+
+
+    public void saveStoreToBookmarks(final Context context, final int user_id, final int int_id) {
+
+        RequestQueue queue = VolleySingleton.getInstance(context).getRequestQueue();
+        SimpleRequest request = new SimpleRequest(Request.Method.POST,
+                Constances.API.API_SAVE_STORE_BOOKMARK, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                if (APP_DEBUG) {
+                    Log.e("response", response);
+                }
+
+                try {
+
+                    JSONObject jsonObject = new JSONObject(response);
+                    Log.d("respo", response);
+                    if (jsonObject.getInt(Tags.SUCCESS) == 1) {
+
+                        storedata = StoreController.doSave(storedata.getId(), 1);
+                        followors.setText("Following");
+                        /*if (storedata != null) {
+                            setBookmarkMenu();
+                        }*/
+
+                        //check if notification agreement is enabled
+//                        Setting defaultAppSetting = SettingsController.findSettingFiled("_NOTIFICATION_AGREEMENT_USE");
+//                        if (defaultAppSetting != null && defaultAppSetting.getValue().equals("1"))
+//                            showBottomSheetDialog(jsonObject.getInt(Tags.RESULT));
+
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Something went wrong , please try later ", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    //send a rapport to support
+                    e.printStackTrace();
+                }
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                if (APP_DEBUG) {
+                    Log.e("ERROR", error.toString());
+                }
+
+
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+
+                params.put("user_id", String.valueOf(user_id));
+                params.put("store_id", String.valueOf(int_id));
+
+                return params;
+            }
+
+        };
+
+        request.setRetryPolicy(new DefaultRetryPolicy(SimpleRequest.TIME_OUT,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        queue.add(request);
+
+    }
+
+
+    private boolean validate() {
+        Comment = et_comment.getText().toString().trim();
+
+        if (android.text.TextUtils.isEmpty(et_comment.getText().toString())) {
+            et_comment.setError("Please Enter Password");
+            et_comment.requestFocus();
+            return false;
+        }
+        return true;
+    }
+
+    public void sendReview(String review, int guest_id) {
+
+        RequestQueue queue = VolleySingleton.getInstance(ProductDetailActivity.this).getRequestQueue();
+        queue = VolleySingleton.getInstance(ProductDetailActivity.this).getRequestQueue();
+
+
+        User user = SessionsController.getSession().getUser();
+
+
+        Log.d("pro", String.valueOf(productData.getStore_id()));
+        Log.d("user", user.getUsername());
+
+        if (review.trim().trim().equals(""))
+            review = " ";
+
+
+        final Map<String, String> params = new HashMap<String, String>();
+
+        params.put("store_id", productData.getStore_id() + "");
+        params.put("rate", "" + "");
+        params.put("review", review + "");
+        params.put("pseudo", user.getUsername() + "");
+        params.put("guest_id", guest_id + "");
+        try {
+            params.put("token", Utils.getToken(AppController.getInstance()));
+        } catch (Exception e) {
+
+        }
+        params.put("mac_adr", ServiceHandler.getMacAddr());
+        params.put("limit", "7");
+
+        SimpleRequest request = new SimpleRequest(Request.Method.POST, Constances.API.API_RATING_STORE, new Response.Listener<String>() {
+
+
+            @Override
+            public void onResponse(String response) {
+                Log.d("resul123", response);
+
+                try {
+
+                    try {
+
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+
+                    JSONObject jso = new JSONObject(response);
+                    int success = jso.getInt("success");
+                    if (success == 1) {
+                        et_comment.getText().clear();
+                        Toast.makeText(ProductDetailActivity.this, getString(R.string.thankYou), Toast.LENGTH_LONG).show();
+
+                        final Store store = StoreController.findStoreById(productData.getStore_id());
+                        if (store != null) {
+                            Realm realm = Realm.getDefaultInstance();
+                            realm.executeTransaction(new Realm.Transaction() {
+                                @Override
+                                public void execute(Realm realm) {
+                                    store.setNbr_votes(String.valueOf((Integer.parseInt(store.getNbr_votes()) + 1)));
+                                    realm.copyToRealmOrUpdate(store);
+                                }
+                            });
+                        }
+
+                    } else {
+
+//                        mainLayout.setVisibility(View.VISIBLE);
+//                        progress.setVisibility(View.GONE);
+
+                    }
+
+                    //add view
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                if (APP_DEBUG) Log.e("ERROR", error.toString());
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                return params;
+            }
+
+        };
+
+
+        request.setRetryPolicy(new DefaultRetryPolicy(SimpleRequest.TIME_OUT,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        queue.add(request);
 
     }
 
@@ -551,7 +879,7 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
         horizontalOfferList = findViewById(R.id.horizontalOfferList);
         //Initialize map fragment
         mGPS = new GPStracker(this);
-       // shareBtn.setVisibility(View.GONE); //HIDE THE SHARE BTN
+        // shareBtn.setVisibility(View.GONE); //HIDE THE SHARE BTN
     }
 
     private void buttonClickListener() {
@@ -567,9 +895,9 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
                         intent.putExtra("latitude", storedata.getLatitude() + "");
                         Log.d("asdf", String.valueOf(storedata.getLatitude()));
                         intent.putExtra("longitude", storedata.getLongitude() + "");
-                       // intent.putExtra("longitude", storedata.getLng() + "");
+                        // intent.putExtra("longitude", storedata.getLng() + "");
                         intent.putExtra("name", storedata.getName() + "");
-                       intent.putExtra("description", storedata.getAddress() + "");
+                        intent.putExtra("description", storedata.getAddress() + "");
                         intent.putExtra("distance", storedata.getDistance() + "");
 
                         startActivity(intent);
@@ -595,9 +923,6 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
         });
 
 
-
-
-
     }
 
     @Override
@@ -621,13 +946,12 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
     }
 
 
-
     public void onClick(View v) {
         if (v.getId() == R.id.phoneBtn) {
             try {
 
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-               // intent.setData(Uri.parse("tel:" + productData.getPhone().trim()));
+                // intent.setData(Uri.parse("tel:" + productData.getPhone().trim()));
                 intent.setData(Uri.parse("tel:" + "9997775588"));
                 if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
 
@@ -646,17 +970,15 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
                     .theme(R.style.FinestWebViewAppTheme)
                     .titleColor(ResourcesCompat.getColor(getResources(), R.color.defaultWhiteColor, null))
                     .urlColor(ResourcesCompat.getColor(getResources(), R.color.defaultWhiteColor, null));
-                    //.show(productData.getWebsite());
+            //.show(productData.getWebsite());
         }
     }
-
 
 
     public void onMapLoaded() {
 
         Toast.makeText(getApplicationContext(), "Map is ready ", Toast.LENGTH_SHORT).show();
     }
-
 
 
     private void setupViews() {
@@ -775,8 +1097,7 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
                     .load(productData.getImages().getUrl500_500())
                     .placeholder(ImageLoaderAnimation.glideLoader(this))
                     .into(image);
-                          //  .fitCenter().into(image);
-
+        //  .fitCenter().into(image);
 
 
         detailProduct.setText(productData.getDescription());
@@ -902,7 +1223,7 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
                         StoreController.insertStores(list);
 
                         storedata = list.get(0);
-                        Log.d("data1234",storedata.getAddress());
+                        Log.d("data1234", storedata.getAddress());
                         setupDataIntoStoreDetailViews();
 
                         mViewManager.showResult();
@@ -960,11 +1281,11 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
 
     }
 
-    private void setupDataIntoStoreDetailViews()   {
+    private void setupDataIntoStoreDetailViews() {
 
-       // setBookmarkMenu();
+        // setBookmarkMenu();
 
-       // showProductFrag();
+        // showProductFrag();
 
         attachMap();
 
@@ -1169,7 +1490,7 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
                         .centerCrop().into(catImage);
             }*/
 
-        } /*catch (Exception e) {
+    } /*catch (Exception e) {
            // categoryLayout.setVisibility(View.GONE);
         }*/
 
@@ -1182,9 +1503,6 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
         if (storedata.isVoted() && menuContext != null) {
             menuContext.findItem(R.id.rate_review).setVisible(true);
         }*/
-
-
-
 
 
     private void attachMap() {

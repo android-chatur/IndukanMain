@@ -582,6 +582,7 @@ com/geogreenapps/apps/indukaan/activities/ProductDetailActivity.java
  com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$12
  com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$13
  com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$14
+ com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$14$1
  com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$15
  com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$16
  com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$17
@@ -592,7 +593,18 @@ com/geogreenapps/apps/indukaan/activities/ProductDetailActivity.java
  com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$21
  com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$22
  com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$23
+ com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$24
+ com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$25
+ com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$26
+ com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$27
+ com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$28
+ com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$29
  com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$3
+ com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$30
+ com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$31
+ com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$32
+ com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$33
+ com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$34
  com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$4
  com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$5
  com.geogreenapps.apps.indukaan.activities.ProductDetailActivity$6
