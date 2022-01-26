@@ -248,7 +248,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/spacing_middle"
-                                android:layout_marginEnd="@dimen/spacing_middle"
+                                android:layout_marginEnd="@dimen/spacing_small"
                                 android:layout_marginBottom="@dimen/spacing_middle"
                                 android:background="@drawable/rounded_layout_item"
                                 android:backgroundTint="@color/white"
@@ -264,7 +264,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="start|center"
                                     android:gravity="left|center"
-                                    android:layout_weight="0.43"
+                                    android:layout_weight="0.44"
                                     android:orientation="vertical">
 
 
@@ -290,7 +290,7 @@
                                     android:layout_gravity="center"
                                     android:gravity="center"
                                     android:layout_marginLeft="10dp"
-                                    android:layout_weight="0.2"
+                                    android:layout_weight="0.22"
                                     android:orientation="vertical">
 
                                     <TextView
@@ -328,7 +328,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="right|center"
                                     android:gravity="right|center"
-                                    android:layout_weight="0.37"
+                                     android:background="@drawable/button_sample"
+                                    android:layout_weight="0.34"
                                     android:orientation="vertical">
 
 
@@ -340,13 +341,11 @@
                                          android:layout_height="wrap_content"
                                          android:layout_gravity="center"
                                          android:textStyle="normal"
-                                         android:background="@drawable/button_sample"
                                          android:gravity="center"
-                                         android:paddingTop="5dp"
-                                         android:paddingBottom="5dp"
-                                         android:text="follow"
+                                        android:padding="5dp"
+                                         android:text="Follow"
                                          android:textColor="@color/white"
-                                         android:textSize="18dp" />
+                                         android:textSize="15dp" />
 
 
                                  </LinearLayout>

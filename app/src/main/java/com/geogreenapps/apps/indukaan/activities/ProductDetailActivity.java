@@ -649,7 +649,7 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
                 Map<String, String> params = new HashMap<String, String>();
 
                 params.put("user_id", String.valueOf(user_id));
-                params.put("store_id", String.valueOf(int_id));
+                params.put("module_id", String.valueOf(int_id));
 
                 return params;
             }
@@ -740,7 +740,7 @@ public class ProductDetailActivity extends GlobalActivity implements ViewManager
                 Map<String, String> params = new HashMap<String, String>();
 
                 params.put("user_id", String.valueOf(user_id));
-                params.put("store_id", String.valueOf(int_id));
+                params.put("module_id", String.valueOf(int_id));
 
                 return params;
             }

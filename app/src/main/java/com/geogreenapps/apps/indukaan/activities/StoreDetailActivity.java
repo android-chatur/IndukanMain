@@ -723,8 +723,7 @@ public class StoreDetailActivity extends GlobalActivity implements ViewManager.C
                 Map<String, String> params = new HashMap<String, String>();
 
                 params.put("user_id", String.valueOf(user_id));
-                params.put("store_id", String.valueOf(int_id));
-
+                params.put("module_id", String.valueOf(int_id));
                 return params;
             }
 
@@ -791,10 +790,8 @@ public class StoreDetailActivity extends GlobalActivity implements ViewManager.C
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-
                 params.put("user_id", String.valueOf(user_id));
-                params.put("store_id", String.valueOf(int_id));
-
+                params.put("module_id", String.valueOf(int_id));
                 return params;
             }
 
