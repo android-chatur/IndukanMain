@@ -22,9 +22,7 @@
     <!-- BroadcastReceiver permission to listen to the network -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-
-    <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- Required OpenGL ES 2.0. for Maps V2 -->
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
@@ -94,13 +92,14 @@
         android:largeHeap="true"
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.geogreenapps.apps.indukaan.activities.OTPActivity"
+            android:exported="false" />
+
         <uses-library
             android:name="org.apache.http.legacy"
-            android:required="false" />
-
-        <!-- Goolge Maps API Key -->
+            android:required="false" /> <!-- Goolge Maps API Key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_api_key0" />

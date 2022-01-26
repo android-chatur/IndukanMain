@@ -305,6 +305,7 @@ public class ListProductsFragment extends Fragment
     public void itemClicked(View view, int position) {
 
         Intent intent = new Intent(getActivity(), ProductDetailActivity.class);
+
         intent.putExtra("product_id", adapter.getItem(position).getId());
         startActivity(intent);
 

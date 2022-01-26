@@ -548,6 +548,10 @@
         "source": "F:\\Chatur\\Indukan\\app\\src\\main\\res\\drawable\\profile_placeholder.png"
     },
     {
+        "merged": "F:\\Chatur\\Indukan\\app\\build\\intermediates\\res\\merged\\debug\\drawable_editext.xml.flat",
+        "source": "F:\\Chatur\\Indukan\\app\\src\\main\\res\\drawable\\editext.xml"
+    },
+    {
         "merged": "F:\\Chatur\\Indukan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_warning_red_500_18dp.png.flat",
         "source": "F:\\Chatur\\Indukan\\app\\src\\main\\res\\drawable-mdpi\\ic_warning_red_500_18dp.png"
     },
@@ -590,6 +594,10 @@
     {
         "merged": "F:\\Chatur\\Indukan\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_rect_outline_white.xml.flat",
         "source": "F:\\Chatur\\Indukan\\app\\src\\main\\res\\drawable\\btn_rect_outline_white.xml"
+    },
+    {
+        "merged": "F:\\Chatur\\Indukan\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_otpactivity.xml.flat",
+        "source": "F:\\Chatur\\Indukan\\app\\src\\main\\res\\layout\\activity_otpactivity.xml"
     },
     {
         "merged": "F:\\Chatur\\Indukan\\app\\build\\intermediates\\res\\merged\\debug\\layout_menu_custom_row_drawer.xml.flat",

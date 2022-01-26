@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.geogreenapps.apps.indukaan">
@@ -12,16 +13,12 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-permission
         android:name="android.permission.READ_PHONE_STATE"
-        tools:node="remove" />
-    <!-- BroadcastReceiver permission to listen to the network -->
+        tools:node="remove" /> <!-- BroadcastReceiver permission to listen to the network -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-
-    <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- Required OpenGL ES 2.0. for Maps V2 -->
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
@@ -39,48 +36,46 @@
         android:smallScreens="true" />
 
     <application
-        android:name="com.geogreenapps.apps.indukaan.AppController"
+        android:name=".AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:supportsRtl="true"
         android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:theme">
+        <activity
+            android:name=".activities.OTPActivity"
+            android:exported="false" />
 
         <uses-library
             android:name="org.apache.http.legacy"
-            android:required="false" />
-
-        <!-- Goolge Maps API Key -->
+            android:required="false" /> <!-- Goolge Maps API Key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_api_key0" />
-
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/ad_app_id" />
 
-        <service android:name="com.geogreenapps.apps.indukaan.push_notification_firebase.FirebaseMessagingService">
+        <service android:name=".push_notification_firebase.FirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name="com.geogreenapps.apps.indukaan.push_notification_firebase.FirebaseInstanceIDService">
+        <service android:name=".push_notification_firebase.FirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
 
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:theme="@android:style/Theme.Translucent" />
 
-
-        <receiver android:name="com.geogreenapps.apps.indukaan.dtmessenger.DCMBroadcastReceiver">
+        <receiver android:name=".dtmessenger.DCMBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
@@ -88,48 +83,33 @@
         </receiver>
 
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.IntroSliderActivity"
-            android:screenOrientation="portrait"
-
-        />
-
-
-        <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.MessengerActivity"
+            android:name=".activities.IntroSliderActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.ReviewsActivity"
+            android:name=".activities.MessengerActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.ProductsActivity"
+            android:name=".activities.ReviewsActivity"
             android:screenOrientation="portrait" />
-
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.ListUsersActivity"
+            android:name=".activities.ProductsActivity"
             android:screenOrientation="portrait" />
-
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.InboxActivity"
+            android:name=".activities.ListUsersActivity"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".activities.InboxActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.wuadam.awesomewebview.AwesomeWebViewActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:hardwareAccelerated="true"
             android:theme="@style/FinestWebViewTheme.Light" />
-
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.MainActivity"
+            android:name=".activities.MainActivity"
             android:screenOrientation="portrait" />
-
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.ProductDetailActivity"
+            android:name=".activities.ProductDetailActivity"
             android:screenOrientation="portrait">
             <intent-filter android:label="@string/_DP_PRODUCT_MESSAGE">
                 <action android:name="android.intent.action.VIEW" />
@@ -142,12 +122,10 @@
                     android:host="@string/_DP_HOST_NAME"
                     android:pathPrefix="@string/DP_PATH_PREFIX_OFFER"
                     android:scheme="nsapp" />
-
                 <data
                     android:host="@string/_DP_HOST_NAME"
                     android:pathPrefix="@string/DP_PATH_PREFIX_OFFER"
                     android:scheme="http" />
-
                 <data
                     android:host="@string/_DP_HOST_NAME"
                     android:pathPrefix="@string/DP_PATH_PREFIX_OFFER"
@@ -158,23 +136,18 @@
                     android:host="@string/_DP_HOST_NAME"
                     android:pathPrefix="@string/DP_PATH_PREFIX_PRODUCT_INDEX"
                     android:scheme="nsapp" />
-
                 <data
                     android:host="@string/_DP_HOST_NAME"
                     android:pathPrefix="@string/DP_PATH_PREFIX_PRODUCT_INDEX"
                     android:scheme="http" />
-
                 <data
                     android:host="@string/_DP_HOST_NAME"
                     android:pathPrefix="@string/DP_PATH_PREFIX_PRODUCT_INDEX"
                     android:scheme="https" />
             </intent-filter>
-
         </activity>
-
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.StoreDetailActivity"
+            android:name=".activities.StoreDetailActivity"
             android:screenOrientation="portrait">
             <intent-filter android:label="@string/_DP_STORE_MESSAGE">
                 <action android:name="android.intent.action.VIEW" />
@@ -187,180 +160,137 @@
                     android:host="@string/_DP_HOST_NAME"
                     android:pathPrefix="@string/DP_PATH_PREFIX_STORE"
                     android:scheme="nsapp" />
-
                 <data
                     android:host="@string/_DP_HOST_NAME"
                     android:pathPrefix="@string/DP_PATH_PREFIX_STORE"
                     android:scheme="http" />
-
                 <data
                     android:host="@string/_DP_HOST_NAME"
                     android:pathPrefix="@string/DP_PATH_PREFIX_STORE"
                     android:scheme="https" />
-
 
                 <!-- WITH INDEX -->
                 <data
                     android:host="@string/_DP_HOST_NAME"
                     android:pathPrefix="@string/DP_PATH_PREFIX_STORE_INDEX"
                     android:scheme="nsapp" />
-
                 <data
                     android:host="@string/_DP_HOST_NAME"
                     android:pathPrefix="@string/DP_PATH_PREFIX_STORE_INDEX"
                     android:scheme="http" />
-
                 <data
                     android:host="@string/_DP_HOST_NAME"
                     android:pathPrefix="@string/DP_PATH_PREFIX_STORE_INDEX"
                     android:scheme="https" />
 
-                <!-- note that the leading "/" is required for pathPrefix-->
+                <!-- note that the leading "/" is required for pathPrefix -->
             </intent-filter>
         </activity>
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.MapDirectionActivity"
+            android:name=".activities.MapDirectionActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.MapStoresListActivity"
+            android:name=".activities.MapStoresListActivity"
             android:screenOrientation="portrait" />
-
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.AboutActivity"
+            android:name=".activities.AboutActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.EditProfileActivity"
+            android:name=".activities.EditProfileActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.CategoriesActivity"
+            android:name=".activities.CategoriesActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.ListStoresActivity"
+            android:name=".activities.ListStoresActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.LoginActivity"
+            android:name=".activities.LoginActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.BookmarkActivity"
+            android:name=".activities.BookmarkActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.SignupActivity"
+            android:name=".activities.SignupActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.SplashActivity"
+            android:name=".activities.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.SettingActivity"
+            android:name=".activities.SettingActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.SliderActivity"
+            android:name=".activities.SliderActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.GalleryActivity"
+            android:name=".activities.GalleryActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.MapMarkerPosition"
+            android:name=".activities.MapMarkerPosition"
             android:label="@string/title_activity_map_marker_position" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.NotificationActivity"
-            android:screenOrientation="portrait" />
-
-
-        <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.OrderCheckoutActivity"
-            android:screenOrientation="portrait" />
-
-
-        <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.ListOrdersActivity"
-            android:screenOrientation="portrait" />
-
-
-        <activity
-            android:name="com.geogreenapps.apps.indukaan.helper.OauthActivity"
-            android:screenOrientation="portrait" />
-
-
-        <activity
-            android:name="com.geogreenapps.apps.indukaan.customview.AdvancedWebViewActivity"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.ListDiscussionsActivity"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.ProductVariantsActivity"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.ProductCartActivity"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.OfferDetailActivity"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.OffersListActivity"
+            android:name=".activities.NotificationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.StoresListActivity"
+            android:name=".activities.OrderCheckoutActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.ProductsListActivity"
+            android:name=".activities.ListOrdersActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.CustomSearchActivity"
+            android:name=".helper.OauthActivity"
             android:screenOrientation="portrait" />
-
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.FindMyPlaceActivity"
+            android:name=".customview.AdvancedWebViewActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.OrderDetailActivity"
+            android:name=".activities.ListDiscussionsActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.ReportOrderActivity"
+            android:name=".activities.ProductVariantsActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.DeliveryTrackingActivity"
+            android:name=".activities.ProductCartActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.SMSVerificationActivity"
+            android:name=".activities.OfferDetailActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.geogreenapps.apps.indukaan.activities.ResultFilterActivity"
+            android:name=".activities.OffersListActivity"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".activities.StoresListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.ProductsListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.CustomSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.FindMyPlaceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.OrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.ReportOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.DeliveryTrackingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SMSVerificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.ResultFilterActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

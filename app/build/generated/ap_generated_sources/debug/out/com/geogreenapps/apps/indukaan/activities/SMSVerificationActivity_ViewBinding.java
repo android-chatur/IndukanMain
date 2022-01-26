@@ -20,7 +20,7 @@ public class SMSVerificationActivity_ViewBinding implements Unbinder {
 
   private View view7f0a0233;
 
-  private View view7f0a06a1;
+  private View view7f0a06a6;
 
   @UiThread
   public SMSVerificationActivity_ViewBinding(SMSVerificationActivity target) {
@@ -46,7 +46,7 @@ public class SMSVerificationActivity_ViewBinding implements Unbinder {
     target.sms_code = Utils.findRequiredViewAsType(source, R.id.sms_code, "field 'sms_code'", MaterialEditText.class);
     view = Utils.findRequiredView(source, R.id.resendCode, "field 'resendCode' and method 'resendVerifCode'");
     target.resendCode = Utils.castView(view, R.id.resendCode, "field 'resendCode'", TextView.class);
-    view7f0a06a1 = view;
+    view7f0a06a6 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -72,7 +72,7 @@ public class SMSVerificationActivity_ViewBinding implements Unbinder {
 
     view7f0a0233.setOnClickListener(null);
     view7f0a0233 = null;
-    view7f0a06a1.setOnClickListener(null);
-    view7f0a06a1 = null;
+    view7f0a06a6.setOnClickListener(null);
+    view7f0a06a6 = null;
   }
 }

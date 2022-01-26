@@ -83,7 +83,7 @@ public class SignupActivity extends GlobalActivity implements View.OnClickListen
     TextView toolbarTitle;
     @BindView(R.id.toolbar_description)
     TextView toolbarDescription;
-
+Button useraccount;
 
     @BindView(R.id.userimage)
     CircularImageView userimage;
@@ -169,6 +169,7 @@ public class SignupActivity extends GlobalActivity implements View.OnClickListen
 
         initToolbar();
 
+        findid();
         gps = new GPStracker(this);
 
         if (SessionsController.isLogged()) {
@@ -204,6 +205,11 @@ public class SignupActivity extends GlobalActivity implements View.OnClickListen
 
     }
 
+    private void findid() {
+        useraccount=findViewById(R.id.useraccount);
+        useraccount.setOnClickListener(this);
+    }
+
     private boolean checkUserConnect() {
 
         return !login.getText().toString().equals("") &&
@@ -212,6 +218,12 @@ public class SignupActivity extends GlobalActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
+
+        switch (v.getId()){
+            case R.id.useraccount:
+startActivity(new Intent(this,OTPActivity.class));
+                break;
+        }
 
         if (v.getId() == R.id.signup) {
 

@@ -198,6 +198,8 @@ com/geogreenapps/apps/indukaan/classes/OpeningTime.java
  com.geogreenapps.apps.indukaan.classes.OpeningTime
 com/geogreenapps/apps/indukaan/activities/ProductsActivity.java
  com.geogreenapps.apps.indukaan.activities.ProductsActivity
+com/geogreenapps/apps/indukaan/activities/OTPActivity.java
+ com.geogreenapps.apps.indukaan.activities.OTPActivity
 com/geogreenapps/apps/indukaan/parser/api_parser/OpeningTimeTableParser.java
  com.geogreenapps.apps.indukaan.parser.api_parser.OpeningTimeTableParser
 com/geogreenapps/apps/indukaan/controllers/sessions/SessionsController.java

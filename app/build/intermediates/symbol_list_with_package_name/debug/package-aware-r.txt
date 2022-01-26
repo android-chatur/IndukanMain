@@ -3273,6 +3273,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable editext
 drawable forward
 drawable forward_vector
 drawable global_btn_text
@@ -4169,6 +4170,7 @@ id dumbbell
 id earth
 id earth_off
 id edge
+id editText_mob
 id edit_query
 id eject
 id elevation_decline
@@ -4604,6 +4606,7 @@ id library_plus
 id light
 id lightbulb
 id lightbulb_outline
+id lin_newuser
 id line1
 id line3
 id line_first
@@ -4856,6 +4859,7 @@ id notification_cv
 id notification_main_column
 id notification_main_column_container
 id notify
+id num_txt
 id number
 id numeric
 id numeric_0_box
@@ -4901,6 +4905,7 @@ id oil
 id oil_temperature
 id ok
 id old_price
+id old_sinup
 id omega
 id on
 id onedrive
@@ -5099,6 +5104,7 @@ id quadcopter
 id quality_high
 id query
 id quicktime
+id r
 id radar
 id radiator
 id radio
@@ -5150,6 +5156,7 @@ id resize_bottom_right
 id responsive
 id restart
 id result_layout
+id retailer
 id reverse
 id review
 id reviewsBtn
@@ -5544,6 +5551,7 @@ id useLogo
 id user_image
 id user_label
 id user_sub_label
+id useraccount
 id userimage
 id vector_arrange_above
 id vector_arrange_below
@@ -5758,6 +5766,7 @@ layout activity_map_marker_position
 layout activity_messenger
 layout activity_offer_detail
 layout activity_order_checkout_step
+layout activity_otpactivity
 layout activity_product_detail
 layout activity_report_issue
 layout activity_reviews

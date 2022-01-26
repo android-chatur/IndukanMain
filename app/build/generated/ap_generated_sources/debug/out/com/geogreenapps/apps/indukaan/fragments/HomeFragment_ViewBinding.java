@@ -19,7 +19,7 @@ import java.lang.Override;
 public class HomeFragment_ViewBinding implements Unbinder {
   private HomeFragment target;
 
-  private View view7f0a0470;
+  private View view7f0a0471;
 
   @UiThread
   public HomeFragment_ViewBinding(final HomeFragment target, View source) {
@@ -29,7 +29,7 @@ public class HomeFragment_ViewBinding implements Unbinder {
     target.mNestedScrollView = Utils.findRequiredViewAsType(source, R.id.mScroll, "field 'mNestedScrollView'", NestedScrollView.class);
     view = Utils.findRequiredView(source, R.id.lbox, "field 'lbox' and method 'submit'");
     target.lbox = Utils.castView(view, R.id.lbox, "field 'lbox'", LinearLayout.class);
-    view7f0a0470 = view;
+    view7f0a0471 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -54,7 +54,7 @@ public class HomeFragment_ViewBinding implements Unbinder {
     target.deliveryWidget = null;
     target.deliveryAppName = null;
 
-    view7f0a0470.setOnClickListener(null);
-    view7f0a0470 = null;
+    view7f0a0471.setOnClickListener(null);
+    view7f0a0471 = null;
   }
 }
